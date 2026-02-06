@@ -19,13 +19,15 @@ function Login() {
     try {
       const res = await axios.post("http://localhost:8080/login", {
         email: username,
-        password: password
-      });
+        password: password},{
+          withCredentials:true,
+        }
+      );
 
       setSuccessMsg(res.data.message);
       localStorage.setItem("loggedIn", "true");
 
-      setTimeout(() => navigate("/dashboard"), 1000);
+       navigate("/dashboard");
 
       setUsername("");
       setPassword("");

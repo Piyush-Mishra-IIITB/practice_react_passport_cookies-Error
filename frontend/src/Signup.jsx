@@ -17,6 +17,8 @@ function Signup() {
           name: username,
           email: email,
           password: password
+        },{
+          withCredentials:true
         }
       );
 
